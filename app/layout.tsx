@@ -5,7 +5,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import LenisProvider from "./providers/LenisProvider";
 import { CartProvider } from "./providers/CartProvider";
-import siteConfig from "@/config/business.config";
+import { businessConfig as siteConfig } from "@/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: `${siteConfig.company.name} | ${siteConfig.company.brandName} ${siteConfig.company.tagline.de}`,
-  description: siteConfig.seo.description.en,
+  description: siteConfig.seo.description.de,
 
   metadataBase: new URL(siteConfig.baseUrl),
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: `${siteConfig.company.name} | ${siteConfig.company.tagline.de}`,
-    description: siteConfig.seo.description.en,
+    description: siteConfig.seo.description.de,
     url: siteConfig.baseUrl,
     siteName: siteConfig.seo.openGraph.siteName,
     locale: siteConfig.seo.openGraph.locale.de,
@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: siteConfig.baseUrl,
               logo: `${siteConfig.baseUrl}${siteConfig.assets.logo}`,
               image: `${siteConfig.baseUrl}${siteConfig.assets.logo}`,
-              description: siteConfig.company.description.en,
+              description: siteConfig.company.description.de,
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: siteConfig.contact.phone,
