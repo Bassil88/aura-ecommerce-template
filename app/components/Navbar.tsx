@@ -6,6 +6,7 @@ import { translations } from "../lib/translations";
 import LanguageToggle from "./LanguageToggle";
 import Link from "next/link";
 import { useCart } from "../providers/CartProvider";
+import siteConfig from "@/config/business.config";
 
 export default function Navbar({ locale }: { locale: "en" | "de" }) {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,7 @@ export default function Navbar({ locale }: { locale: "en" | "de" }) {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[70px]">
         {/* Logo */}
         <Link href={`/${locale}`} aria-label="Go to home" className="cursor-pointer">
-          <Image src="/logo1.png" alt="aura logo" width={600} height={100} priority className="h-auto w-[90px] sm:w-[120px] md:w-[180px] object-contain" />
+          <Image src={siteConfig.assets.logo} alt={siteConfig.assets.logoAlt} width={600} height={100} priority className="h-auto w-[90px] sm:w-[120px] md:w-[180px] object-contain" />
         </Link>
 
         {/* Desktop Nav */}

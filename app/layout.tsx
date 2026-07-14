@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import LenisProvider from "./providers/LenisProvider";
 import { CartProvider } from "./providers/CartProvider";
+import siteConfig from "@/config/business.config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,26 +18,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aura Organic Coffee | Aura Bio Kaffee",
-  description: "Discover the rich flavors of Aura Organic Coffee, your source for premium organic coffee beans and brewing equipment.",
+  title: `${siteConfig.company.name} | ${siteConfig.company.brandName} ${siteConfig.company.tagline.de}`,
+  description: siteConfig.seo.description.en,
 
-  // metadataBase: new URL("https://aura-coffee-demo.vercel.app"),
-  metadataBase: new URL("https://aura-coffee-demo.vercel.app"),
+  metadataBase: new URL(siteConfig.baseUrl),
 
   alternates: {
     languages: {
-      "de-DE": "https://aura-coffee-demo.vercel.app/de",
-      "en-US": "https://aura-coffee-demo.vercel.app/en",
+      "de-DE": `${siteConfig.baseUrl}/de`,
+      "en-US": `${siteConfig.baseUrl}/en`,
     },
   },
 
   openGraph: {
-    title: "Aura Organic Coffee | Bio Kaffee & Wellness",
-    description: "Discover the rich flavors of Aura Organic Coffee, your source for premium organic coffee beans and brewing equipment.",
-    url: "https://aura-coffee-demo.vercel.app",
-    siteName: "Aura Organic Coffee",
-    locale: "de_DE",
-    type: "website",
+    title: `${siteConfig.company.name} | ${siteConfig.company.tagline.de}`,
+    description: siteConfig.seo.description.en,
+    url: siteConfig.baseUrl,
+    siteName: siteConfig.seo.openGraph.siteName,
+    locale: siteConfig.seo.openGraph.locale.de,
+    type: 'website',
   },
 
   robots: {
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: siteConfig.assets.favicon16, sizes: "16x16", type: "image/png" },
+      { url: siteConfig.assets.favicon32, sizes: "32x32", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: siteConfig.assets.appleTouchIcon,
   },
 };
 
@@ -72,24 +72,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Aura Organic Coffee",
-              url: "https://aura-coffee-demo.vercel.app",
-              logo: "https://aura-coffee-demo.vercel.app/logo1.png",
-              image: "https://aura-coffee-demo.vercel.app/logo1.png",
-              description: "Aura Organic Coffee provides premium organic coffee beans and brewing equipment.",
+              name: siteConfig.company.name,
+              url: siteConfig.baseUrl,
+              logo: `${siteConfig.baseUrl}${siteConfig.assets.logo}`,
+              image: `${siteConfig.baseUrl}${siteConfig.assets.logo}`,
+              description: siteConfig.company.description.en,
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+49-123-4567890",
+                telephone: siteConfig.contact.phone,
                 contactType: "customer support",
-                areaServed: "DE",
-                availableLanguage: ["de", "en"],
+                areaServed: siteConfig.address.countryCode,
+                availableLanguage: siteConfig.locales,
               },
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Musterstraße 10",
-                addressLocality: "Berlin",
-                postalCode: "10827",
-                addressCountry: "DE",
+                streetAddress: siteConfig.address.street,
+                addressLocality: siteConfig.address.city,
+                postalCode: siteConfig.address.postalCode,
+                addressCountry: siteConfig.address.countryCode,
               },
             }),
           }}

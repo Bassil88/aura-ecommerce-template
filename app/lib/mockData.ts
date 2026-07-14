@@ -1,3 +1,5 @@
+import siteConfig from "@/config/business.config";
+
 export interface Product {
   id: string;
   price: number;
@@ -70,8 +72,8 @@ export const products: Product[] = [
     category: 'Coffee',
     image: '/Medium-dark roast.jpg',
     name: {
-      en: 'Aura Signature Blend',
-      de: 'Aura Signature Blend'
+      en: `${siteConfig.company.brandName} Signature Blend`,
+      de: `${siteConfig.company.brandName} Signature Blend`
     },
     description: {
       en: 'Medium-dark roast with chocolatey undertones and a smooth, balanced finish.',

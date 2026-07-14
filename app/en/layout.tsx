@@ -1,18 +1,19 @@
 import Navbar from "../components/Navbar";
 import type { Metadata } from "next";
 import ScrollIndicator from "../components/ScrollIndicator";
+import siteConfig from "@/config/business.config";
 
 export const metadata: Metadata = {
   title: {
-    default: "Aura Organic Coffee | Aura Bio Kaffee",
-    template: "%s | Aura Organic Coffee",
+    default: `${siteConfig.company.name} | ${siteConfig.company.brandName} ${siteConfig.company.tagline.en}`,
+    template: siteConfig.seo.titleTemplate,
   },
   alternates: {
-    canonical: "https://aura-coffee-demo.vercel.app/en",
+    canonical: `${siteConfig.baseUrl}/en`,
     languages: {
-      de: "https://aura-coffee-demo.vercel.app/de",
-      en: "https://aura-coffee-demo.vercel.app/en",
-      "x-default": "https://aura-coffee-demo.vercel.app/",
+      de: `${siteConfig.baseUrl}/de`,
+      en: `${siteConfig.baseUrl}/en`,
+      "x-default": `${siteConfig.baseUrl}/`,
     },
   },
 };

@@ -1,4 +1,5 @@
 import { translations } from "../../lib/translations";
+import siteConfig from "@/config/business.config";
 
 export default async function DatenschutzPage({
   params,
@@ -21,7 +22,7 @@ export default async function DatenschutzPage({
         <h1 className="text-5xl mb-6">{t.title}</h1>
 
         <p className="text-lg text-gray-700 leading-relaxed">
-          {t.p1}
+          {t.p1.replace('{companyName}', siteConfig.company.name)}
         </p>
 
         <p className="mt-4 text-lg text-gray-700 leading-relaxed">

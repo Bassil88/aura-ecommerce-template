@@ -10,11 +10,11 @@ import RealChallenge from "../components/RealChallenge";
 // import CommonChallenges from "../components/CommenChallenges";
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import siteConfig from "@/config/business.config";
 
 export const metadata: Metadata = {
-  title: "Aura Organic Coffee | Bio Kaffee & Wellness",
-description:
-"Entdecken Sie hochwertigen Bio-Kaffee, Tee und Wellness-Produkte von Aura Organic Coffee.",
+  title: `${siteConfig.company.name} | ${siteConfig.company.tagline.de}`,
+description: siteConfig.seo.description.de,
 };
 
 const Services = dynamic(() => import("../components/Services"));

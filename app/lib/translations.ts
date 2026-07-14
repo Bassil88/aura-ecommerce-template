@@ -1,6 +1,3 @@
-import { subtle } from "crypto";
-import { sub } from "three/tsl";
-
 export const translations = {
   en: {
     nav: {
@@ -216,13 +213,13 @@ export const translations = {
     legal: {
       impressum: {
         title: "Legal Notice",
-        p1: "This is a temporary legal notice provided during the development phase of the Aura Organic Coffee website.",
+        p1: "This is a temporary legal notice provided during the development phase of the {companyName} website.",
         p2: "A complete legal notice will be published before the official launch of the website.",
         lastUpdated: "Last updated: 2026",
       },
       privacy: {
         title: "Privacy Policy",
-        p1: "This is a temporary privacy policy provided during the development phase of the Aura Organic Coffee website.",
+        p1: "This is a temporary privacy policy provided during the development phase of the {companyName} website.",
         p2: "A complete privacy policy will be published before the official launch of the website.",
         contactTitle: "Contact",
         contactText: "If you have any questions regarding data protection, please contact us using the contact details provided on the website.",
@@ -449,13 +446,13 @@ export const translations = {
     legal: {
       impressum: {
         title: "Impressum",
-        p1: "Dies ist ein vorläufiges Impressum für die Entwicklungsphase der Website Aura Organic Coffee.",
+        p1: "Dies ist ein vorläufiges Impressum für die Entwicklungsphase der Website {companyName}.",
         p2: "Ein vollständiges Impressum wird vor dem offiziellen Start der Website bereitgestellt.",
         lastUpdated: "Stand: 2026",
       },
       privacy: {
         title: "Datenschutzerklärung",
-        p1: "Dies ist eine vorläufige Datenschutzerklärung für die Entwicklungsphase der Website Aura Organic Coffee.",
+        p1: "Dies ist eine vorläufige Datenschutzerklärung für die Entwicklungsphase der Website {companyName}.",
         p2: "Eine vollständige Datenschutzerklärung wird vor dem offiziellen Start der Website bereitgestellt.",
         contactTitle: "Kontakt",
         contactText: "Bei Fragen zum Datenschutz kontaktieren Sie uns bitte über die auf der Website angegebenen Kontaktmöglichkeiten.",

@@ -3,11 +3,11 @@ import RealChallenge from "../components/RealChallenge";
 import dynamic from "next/dynamic";
 
 import type { Metadata } from "next";
+import siteConfig from "@/config/business.config";
 
 export const metadata: Metadata = {
-  title: "Aura Organic Coffee | Aura Bio Kaffee",
-  description:
-    "Discover the rich flavors of Aura Organic Coffee, your source for premium organic coffee beans and brewing equipment.",
+  title: `${siteConfig.company.name} | ${siteConfig.company.brandName} ${siteConfig.company.tagline.en}`,
+  description: siteConfig.seo.description.en,
 };
 
 const Services = dynamic(() => import("../components/Services"));

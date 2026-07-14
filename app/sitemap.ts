@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
+import siteConfig from "@/config/business.config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-const baseUrl = "https://aura-coffee-demo.vercel.app";
+const baseUrl = siteConfig.baseUrl;
 
 
   return [

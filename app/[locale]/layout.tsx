@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar";
 import type { Metadata } from "next";
 import ScrollIndicator from "../components/ScrollIndicator";
+import siteConfig from "@/config/business.config";
 
 export const metadata: Metadata = {
   title: {
-    default: "Aura Organic Coffee | Bio Kaffee & Wellness",
-    template: "%s | Aura Organic Coffee",
+    default: `${siteConfig.company.name} | ${siteConfig.company.tagline.de}`,
+    template: siteConfig.seo.titleTemplate,
   },
 };
 
